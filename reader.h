@@ -21,158 +21,158 @@ struct reader_type {
 }reader;
 reader_type& operator >> (reader_type& in,int &x) {
 	if (in.flag) return x = 0,in;
-	char ch = in.nc ();if (ch == EOF) return x = 0,in;;
+	char ch = in.nc ();if (ch == EOF) return x = 0,in;
 	short f = 1;
 	x = 0;
 	while (ch < '0' || ch > '9') {
 		if (ch == '-') f = -1;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	while ('0' <= ch && ch <= '9') {
 		x = (x << 1) + (x << 3) + ch - 48;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	x *= f;
 	return in;
 }
 reader_type& operator >> (reader_type& in,UI &x) {
 	if (in.flag) return x = 0,in;
-	char ch = in.nc ();if (ch == EOF) return x = 0,in;;
+	char ch = in.nc ();if (ch == EOF) return x = 0,in;
 	short f = 1;
 	x = 0;
 	while (ch < '0' || ch > '9') {
 		if (ch == '-') f = -1;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	while ('0' <= ch && ch <= '9') {
 		x = (x << 1) + (x << 3) + ch - 48;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	x *= f;
 	return in;
 }
 reader_type& operator >> (reader_type& in,L &x) {
 	if (in.flag) return x = 0,in;
-	char ch = in.nc ();if (ch == EOF) return x = 0,in;;
+	char ch = in.nc ();if (ch == EOF) return x = 0,in;
 	short f = 1;
 	x = 0;
 	while (ch < '0' || ch > '9') {
 		if (ch == '-') f = -1;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	while ('0' <= ch && ch <= '9') {
 		x = (x << 1) + (x << 3) + ch - 48;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	x *= f;
 	return in;
 }
 reader_type& operator >> (reader_type& in,UL &x) {
 	if (in.flag) return x = 0,in;
-	char ch = in.nc ();if (ch == EOF) return x = 0,in;;
+	char ch = in.nc ();if (ch == EOF) return x = 0,in;
 	short f = 1;
 	x = 0;
 	while (ch < '0' || ch > '9') {
 		if (ch == '-') f = -1;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	while ('0' <= ch && ch <= '9') {
 		x = (x << 1) + (x << 3) + ch - 48;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	x *= f;
 	return in;
 }
 reader_type& operator >> (reader_type& in,LL &x) {
 	if (in.flag) return x = 0,in;
-	char ch = in.nc ();if (ch == EOF) return x = 0,in;;
+	char ch = in.nc ();if (ch == EOF) return x = 0,in;
 	short f = 1;
 	x = 0;
 	while (ch < '0' || ch > '9') {
 		if (ch == '-') f = -1;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	while ('0' <= ch && ch <= '9') {
 		x = (x << 1) + (x << 3) + ch - 48;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	x *= f;
 	return in;
 }
 reader_type& operator >> (reader_type& in,ULL &x) {
 	if (in.flag) return x = 0,in;
-	char ch = in.nc ();if (ch == EOF) return x = 0,in;;
+	char ch = in.nc ();if (ch == EOF) return x = 0,in;
 	short f = 1;
 	x = 0;
 	while (ch < '0' || ch > '9') {
 		if (ch == '-') f = -1;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	while ('0' <= ch && ch <= '9') {
 		x = (x << 1) + (x << 3) + ch - 48;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	x *= f;
 	return in;
 }
 reader_type& operator >> (reader_type& in,LL128 &x) {
 	if (in.flag) return x = 0,in;
-	char ch = in.nc ();if (ch == EOF) return x = 0,in;;
+	char ch = in.nc ();if (ch == EOF) return x = 0,in;
 	short f = 1;
 	x = 0;
 	while (ch < '0' || ch > '9') {
 		if (ch == '-') f = -1;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	while ('0' <= ch && ch <= '9') {
 		x = (x << 1) + (x << 3) + ch - 48;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	x *= f;
 	return in;
 }
 reader_type& operator >> (reader_type& in,ULL128 &x) {
 	if (in.flag) return x = 0,in;
-	char ch = in.nc ();if (ch == EOF) return x = 0,in;;
+	char ch = in.nc ();if (ch == EOF) return x = 0,in;
 	short f = 1;
 	x = 0;
 	while (ch < '0' || ch > '9') {
 		if (ch == '-') f = -1;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	while ('0' <= ch && ch <= '9') {
 		x = (x << 1) + (x << 3) + ch - 48;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	x *= f;
 	return in;
 }
 reader_type& operator >> (reader_type &in,double &x) {
 	if (in.flag) return x = 0,in;
-	char ch = in.nc ();if (ch == EOF) return x = 0,in;;
+	char ch = in.nc ();if (ch == EOF) return x = 0,in;
 	short f = 1;
 	x = 0;
 	while (ch < '0' || ch > '9') {
 		if (ch == '-') f = -1;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	while ('0' <= ch && ch <= '9') {
 		x = x * 10 + ch - 48;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	x *= f;
 	if (ch == '.') {
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 		f = 1;
 		double t = 1,p = 0;
 		while (ch < '0' || ch > '9') {
 			if (ch == '-') f = -1;
-			ch = in.nc ();if (ch == EOF) return x = 0,in;;
+			ch = in.nc ();if (ch == EOF) return x = 0,in;
 		}
 		while ('0' <= ch && ch <= '9') {
 			p = p * 10 + ch - 48;
 			t *= 0.1;
-			ch = in.nc ();if (ch == EOF) return x = 0,in;;
+			ch = in.nc ();if (ch == EOF) return x = 0,in;
 		}
 		x += p * t;
 	}
@@ -190,30 +190,30 @@ reader_type& operator >> (reader_type &in,double &x) {
 }
 reader_type& operator >> (reader_type &in,LD &x) {
 	if (in.flag) return x = 0,in;
-	char ch = in.nc ();if (ch == EOF) return x = 0,in;;
+	char ch = in.nc ();if (ch == EOF) return x = 0,in;
 	short f = 1;
 	x = 0;
 	while (ch < '0' || ch > '9') {
 		if (ch == '-') f = -1;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	while ('0' <= ch && ch <= '9') {
 		x = x * 10 + ch - 48;
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 	}
 	x *= f;
 	if (ch == '.') {
-		ch = in.nc ();if (ch == EOF) return x = 0,in;;
+		ch = in.nc ();if (ch == EOF) return x = 0,in;
 		f = 1;
 		LD t = 1,p = 0;
 		while (ch < '0' || ch > '9') {
 			if (ch == '-') f = -1;
-			ch = in.nc ();if (ch == EOF) return x = 0,in;;
+			ch = in.nc ();if (ch == EOF) return x = 0,in;
 		}
 		while ('0' <= ch && ch <= '9') {
 			p = p * 10 + ch - 48;
 			t *= 0.1;
-			ch = in.nc ();if (ch == EOF) return x = 0,in;;
+			ch = in.nc ();if (ch == EOF) return x = 0,in;
 		}
 		x += p * t;
 	}
