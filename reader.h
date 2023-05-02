@@ -1,15 +1,8 @@
 #ifndef INCRA_READER
 #define INCRA_READER
 #include <iostream>
+#include "typedef.h"
 using namespace std;
-typedef unsigned int UI;
-typedef long L;
-typedef unsigned long UL;
-typedef long long LL;
-typedef unsigned long long ULL;
-typedef __int128 LL128;
-typedef unsigned __int128 ULL128;
-typedef long double LD;
 struct reader_type {
 	bool flag;
 	reader_type () {flag = false;}
