@@ -18,6 +18,7 @@ struct reader_type {
 		char ch = getchar ();
 		return ch == EOF ? flag = true,EOF : ch;
 	}
+	void reset () {flag = false;}
 }reader;
 reader_type& operator >> (reader_type& in,int &x) {
 	if (in.flag) return x = 0,in;
