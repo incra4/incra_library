@@ -1,4 +1,3 @@
-```
 #ifndef INCRA_READER
 #define INCRA_READER
 #include <iostream>
@@ -235,4 +234,3 @@ template <typename T1,typename T2> reader_type& operator >> (reader_type& in,pai
 	return in;
 }
 #endif //INCRA_READER
-```
