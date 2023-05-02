@@ -1,3 +1,5 @@
+#ifndef INCRA_TYPEDEF
+#define INCRA_TYPEDEF
 #include <iostream>
 using namespace std;
 typedef unsigned int UI;
@@ -35,3 +37,4 @@ typedef pair <string,LL> PSL;
 typedef pair <string,char> PSC;
 typedef pair <string,double> PSD;
 typedef pair <string,string> PSS;
+#endif //INCRA_TYPEDEF
