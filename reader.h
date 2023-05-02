@@ -1,5 +1,5 @@
 #ifndef INCRA_READER
-#define ICNRA_READER
+#define INCRA_READER
 #include <iostream>
 using namespace std;
 typedef unsigned int UI;
