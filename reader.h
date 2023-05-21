@@ -12,7 +12,7 @@ struct reader_type {
 		return ch == EOF ? flag = true,EOF : ch;
 	}
 	void reset () {flag = false;}
-}reader;
+}reader,cin;
 reader_type& operator >> (reader_type& in,int &x) {
 	if (in.flag) return x = 0,in;
 	char ch = in.nc ();if (ch == EOF) return x = 0,in;
