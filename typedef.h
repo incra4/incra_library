@@ -1,6 +1,5 @@
 #ifndef INCRA_TYPEDEF
 #define INCRA_TYPEDEF
-#include <iostream>
 using namespace std;
 typedef unsigned int UI;
 typedef long L;
