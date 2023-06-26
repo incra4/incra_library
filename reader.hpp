@@ -1,18 +1,21 @@
 #ifndef INCRA_READER
 #define INCRA_READER
 #include <iostream>
-#include "typedef.h"
 using namespace std;
+char *p1,*p2,buf[100000];
+#define gc() (p1 == p2 && (p2 = (p1 = buf) + fread (buf,1,100000,stdin),p1 == p2) ? EOF : *p1++)
 struct reader_type {
 	bool flag;
 	reader_type () {flag = false;}
 	char nc () {
 		if (flag) return EOF;
-		char ch = getchar ();
-		return ch == EOF ? flag = true,EOF : ch;
+		return gc ();
 	}
 	void reset () {flag = false;}
-}reader,cin;
+	bool operator () (reader_type& in) {
+		return !in.flag;
+	}
+}read;
 reader_type& operator >> (reader_type& in,int &x) {
 	if (in.flag) return x = 0,in;
 	char ch = in.nc ();if (ch == EOF) return x = 0,in;
@@ -29,7 +32,7 @@ reader_type& operator >> (reader_type& in,int &x) {
 	x *= f;
 	return in;
 }
-reader_type& operator >> (reader_type& in,UI &x) {
+reader_type& operator >> (reader_type& in,unsigned int &x) {
 	if (in.flag) return x = 0,in;
 	char ch = in.nc ();if (ch == EOF) return x = 0,in;
 	short f = 1;
@@ -45,7 +48,7 @@ reader_type& operator >> (reader_type& in,UI &x) {
 	x *= f;
 	return in;
 }
-reader_type& operator >> (reader_type& in,L &x) {
+reader_type& operator >> (reader_type& in,long &x) {
 	if (in.flag) return x = 0,in;
 	char ch = in.nc ();if (ch == EOF) return x = 0,in;
 	short f = 1;
@@ -61,7 +64,7 @@ reader_type& operator >> (reader_type& in,L &x) {
 	x *= f;
 	return in;
 }
-reader_type& operator >> (reader_type& in,UL &x) {
+reader_type& operator >> (reader_type& in,unsigned long &x) {
 	if (in.flag) return x = 0,in;
 	char ch = in.nc ();if (ch == EOF) return x = 0,in;
 	short f = 1;
@@ -77,7 +80,7 @@ reader_type& operator >> (reader_type& in,UL &x) {
 	x *= f;
 	return in;
 }
-reader_type& operator >> (reader_type& in,LL &x) {
+reader_type& operator >> (reader_type& in,long long &x) {
 	if (in.flag) return x = 0,in;
 	char ch = in.nc ();if (ch == EOF) return x = 0,in;
 	short f = 1;
@@ -93,7 +96,7 @@ reader_type& operator >> (reader_type& in,LL &x) {
 	x *= f;
 	return in;
 }
-reader_type& operator >> (reader_type& in,ULL &x) {
+reader_type& operator >> (reader_type& in,unsigned long long &x) {
 	if (in.flag) return x = 0,in;
 	char ch = in.nc ();if (ch == EOF) return x = 0,in;
 	short f = 1;
@@ -109,7 +112,7 @@ reader_type& operator >> (reader_type& in,ULL &x) {
 	x *= f;
 	return in;
 }
-reader_type& operator >> (reader_type& in,LL128 &x) {
+reader_type& operator >> (reader_type& in,__int128 &x) {
 	if (in.flag) return x = 0,in;
 	char ch = in.nc ();if (ch == EOF) return x = 0,in;
 	short f = 1;
@@ -125,7 +128,7 @@ reader_type& operator >> (reader_type& in,LL128 &x) {
 	x *= f;
 	return in;
 }
-reader_type& operator >> (reader_type& in,ULL128 &x) {
+reader_type& operator >> (reader_type& in,unsigned __int128 &x) {
 	if (in.flag) return x = 0,in;
 	char ch = in.nc ();if (ch == EOF) return x = 0,in;
 	short f = 1;
@@ -172,7 +175,7 @@ reader_type& operator >> (reader_type &in,double &x) {
 	}
 	if (ch == 'E' || ch == 'e') {
 		int p;
-		reader >> p;
+		in >> p;
 		double b = 10;
 		while (p) {
 			if (p & 1) x *= b;
@@ -182,7 +185,7 @@ reader_type& operator >> (reader_type &in,double &x) {
 	}
 	return in;
 }
-reader_type& operator >> (reader_type &in,LD &x) {
+reader_type& operator >> (reader_type &in,long double &x) {
 	if (in.flag) return x = 0,in;
 	char ch = in.nc ();if (ch == EOF) return x = 0,in;
 	short f = 1;
@@ -199,7 +202,7 @@ reader_type& operator >> (reader_type &in,LD &x) {
 	if (ch == '.') {
 		ch = in.nc ();if (ch == EOF) return x = 0,in;
 		f = 1;
-		LD t = 1,p = 0;
+		long double t = 1,p = 0;
 		while (ch < '0' || ch > '9') {
 			if (ch == '-') f = -1;
 			ch = in.nc ();if (ch == EOF) return x = 0,in;
@@ -213,8 +216,8 @@ reader_type& operator >> (reader_type &in,LD &x) {
 	}
 	if (ch == 'E' || ch == 'e') {
 		int p;
-		reader >> p;
-		LD b = 10;
+		in >> p;
+		long double b = 10;
 		while (p) {
 			if (p & 1) x *= b;
 			p >>= 1;
